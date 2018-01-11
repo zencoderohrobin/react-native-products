@@ -17,13 +17,19 @@ export default class App extends Component<{}> {
       fetching: false
     };
   }
+
+  componentDidMount() {
+    this.setState({ fetching: true });
+    fetch('https://hplussport.com/api/products.php');
+  }
+
   render() {
     return (
       <ScrollView>
         <ActivityIndicator
           size="large"
           style={styles.spinner}
-          animating={true}
+          animating={this.state.fetching}
         />
       </ScrollView>
     );
