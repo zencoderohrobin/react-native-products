@@ -18,7 +18,15 @@ export default class App extends Component<{}> {
     };
   }
   render() {
-    return <ScrollView />;
+    return (
+      <ScrollView>
+        <ActivityIndicator
+          size="large"
+          style={styles.spinner}
+          animating={true}
+        />
+      </ScrollView>
+    );
   }
 }
 
