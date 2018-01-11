@@ -20,7 +20,10 @@ export default class App extends Component<{}> {
 
   componentDidMount() {
     this.setState({ fetching: true });
-    fetch('https://hplussport.com/api/products.php');
+    fetch('https://hplussport.com/api/products.php')
+      .then(response => response.json())
+      .then(products => console.log(products))
+      .catch(err => console.error('error fetching products', err));
   }
 
   render() {
