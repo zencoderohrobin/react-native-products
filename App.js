@@ -29,7 +29,7 @@ export default class App extends Component<{}> {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView horizontal={true}>
         <ActivityIndicator
           size="large"
           style={styles.spinner}
@@ -48,5 +48,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width
+  },
+  thumbnail: {
+    width: 375,
+    resizeMode: 'cover'
   }
 });
