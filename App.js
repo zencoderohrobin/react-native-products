@@ -35,6 +35,9 @@ export default class App extends Component<{}> {
           style={styles.spinner}
           animating={this.state.fetching}
         />
+        {this.state.productImages.map((uri, index) => (
+          <Image style={styles.thumbnail} key={index} source={{ uri }} />
+        ))}
       </ScrollView>
     );
   }
