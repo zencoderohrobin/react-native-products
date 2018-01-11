@@ -30,4 +30,10 @@ export default class App extends Component<{}> {
   }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  spinner: {
+    position: 'absolute',
+    height: Dimensions.get('window').height,
+    width: Dimensions.get('window').width
+  }
+});
