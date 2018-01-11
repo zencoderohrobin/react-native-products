@@ -22,7 +22,8 @@ export default class App extends Component<{}> {
     this.setState({ fetching: true });
     fetch('https://hplussport.com/api/products.php')
       .then(response => response.json())
-      .then(products => console.log(products))
+      .then(products => products.map(product => product.image))
+      .then(productImages => this.setState({ productImages, fetching: false }))
       .catch(err => console.error('error fetching products', err));
   }
 
