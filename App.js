@@ -10,6 +10,13 @@ import {
 } from 'react-native';
 
 export default class App extends Component<{}> {
+  constructor() {
+    super();
+    this.state = {
+      productImages: [],
+      fetching: false
+    };
+  }
   render() {
     return <ScrollView />;
   }
